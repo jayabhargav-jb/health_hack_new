@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.css"> 
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <link>
+    <title>Ayush</title>
+
+    <style>
+        .box {
+            background-color: azure;
+            border: 1px transparent solid;
+            border-radius: 4px;
+
+            margin: 100px !important;
+            padding: 100px !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div id="form"></form>
+    </div>
+    
+    <script>
+      
+      var i = 0;
+      let l1 = document.createElement("label");
+     
+      let button=document.createElement('button')
+      button.innerText="Submit"
+      button.classList.add('Submit')
+      let email = document.createElement('input')
+      email.type='email'
+      email.id='mail'
+      l1.for=email.id
+      let l2 = document.createElement('label')
+      let dob = document.createElement('input')
+      dob.id = 'dob'
+      dob.type='date'
+      dob.placeholder="dd-mm-yyyy"
+      dob.value=""
+      const date = new Date()
+      console.log(`${date.getDate}-${date.getMonth}`)
+      dob.min="1900-01-01" 
+      l2.for=dob.id
+      dob.max=date
+
+
+function addElements(something, option1, option2, option3) {
+    // Get the element with the ID "form"
+    i ++;
+    var form = document.getElementById("form");
+
+    // Create <p> element
+    var pElement = document.createElement("p");
+    pElement.innerHTML = something;
+
+    // Create div for option 1
+    var div1 = document.createElement("div");
+    div1.classList.add("form-check", "form-check-inline");
+
+    var input1 = document.createElement("input");
+    input1.classList.add("form-check-input");
+    input1.setAttribute("type", "radio");
+    input1.setAttribute("name", i);
+    input1.setAttribute("value", "v");
+    input1.id = "o1";
+
+    var label1 = document.createElement("label");
+    label1.classList.add("form-check-label");
+    label1.setAttribute("for", "flexCheckDefault");
+    label1.innerHTML = option1;
+
+    // Create div for option 2
+    var div2 = document.createElement("div");
+    div2.classList.add("form-check", "form-check-inline");
+
+    var input2 = document.createElement("input");
+    input2.classList.add("form-check-input");
+    input2.setAttribute("type", "radio");
+    input2.setAttribute("name", i);
+    input2.setAttribute("value", "p");
+    input2.id = "o2";
+
+    var label2 = document.createElement("label");
+    label2.classList.add("form-check-label");
+    label2.setAttribute("for", "flexCheckChecked");
+    label2.innerHTML = option2;
+
+    // Create div for option 3
+    var div3 = document.createElement("div");
+    div3.classList.add("form-check", "form-check-inline");
+
+    var input3 = document.createElement("input");
+    input3.classList.add("form-check-input");
+    input3.setAttribute("type", "radio");
+    input3.setAttribute("name", i);
+    input3.setAttribute("value", "k");
+    input3.id = "o3";
+
+    var label3 = document.createElement("label");
+    label3.classList.add("form-check-label");
+    label3.setAttribute("for", "flexCheckChecked");
+    label3.innerHTML = option3;
+
+    // Append elements to respective divs
+    div1.appendChild(input1);
+    div1.appendChild(label1);
+    div2.appendChild(input2);
+    div2.appendChild(label2);
+    div3.appendChild(input3);
+    div3.appendChild(label3);
+
+    // Append divs to form
+    form.appendChild(pElement);
+    form.appendChild(div1);
+    form.appendChild(div2);
+    form.appendChild(div3);
+}
+form.appendChild(l1)
+form.appendChild(email)
+form.appendChild(l2)
+form.appendChild(dob)
+addElements("Skin", "Dry", "Smooth, Oily", "Pale, Thick");
+addElements("Hair", "Dry Brown, Black, Knotted, Thin", "Straight, Oily, Blond, Gray, Red, Bald", "Thick, Curly, Grey");
+addElements("Appetite", "Irregular", "Strong", "Steady");
+addElements("Digestion", "Irrregular", "Quick", "Prolonged");
+addElements("Taste Preference", "Sweet, Sour, Salty", "Butter, Astringent", "Pungent");
+addElements("Thirst", "Fluctuates", "High", "Low");
+addElements("Physical Activity", "High", "Moderate", "Low");
+addElements("Pulse", "80-70", "70-60", "60-50");
+addElements("Mind Nature", "Adaptable, Quick, Indicisive", "Critial, Intelligent, Penetrating", "Slow, Steady, Dull");
+addElements("Lips", "Thin", "red", "Pale");
+addElements("Sleep", "Wakes Easily, Difficult to sleep", "Easy to fall asleep, stays asleep, has difficulty sleeping in warm weather", "Long & Deep Sleep, Difficulty Waking p");
+form.appendChild(button)
+    </script>
+<script src="js/bootstrap.js"></script>
+<script  src="js/app.js"></script>
+</body>
+
+</html>
